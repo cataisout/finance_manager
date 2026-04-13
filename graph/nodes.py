@@ -57,6 +57,8 @@ def execute_ad_registry_node(state: State, db_manager):
 
     if not state["data"].get("description"):
         description = state["data"]["category"]
+    else:
+        description = state["data"]["description"]
     try:
         db_manager.insert_spend(
             value=state["data"]["value"],
